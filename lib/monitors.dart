@@ -17,6 +17,7 @@ class Monitors extends StatelessWidget {
             ),
             name: 'João Pedro F. Barbosa',
             email: 'joao@gmail.com'),
+        const Padding(padding: EdgeInsets.only(bottom: 10.0)),
         MonitorCard(
             avatar: Container(
               decoration: const BoxDecoration(color: Colors.amber),

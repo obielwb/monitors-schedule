@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:monitors_schedule/details.dart';
 
 class _MontitorDescription extends StatelessWidget {
   const _MontitorDescription({required this.name, required this.email});
@@ -43,10 +44,9 @@ class MonitorCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.0),
-        child: SizedBox(
-          height: 100,
+    return InkWell(
+        child: Container(
+          height: 100.0,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -58,6 +58,11 @@ class MonitorCard extends StatelessWidget {
               )
             ],
           ),
-        ));
+        ),
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const Details();
+          }));
+        });
   }
 }
