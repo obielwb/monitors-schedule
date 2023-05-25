@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es2022",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@entities": ["src/entities"],
+      "@controllers": ["src/controllers"],
+      "@routes": ["src/routes"]
+    }
+  },
+  "include": ["./src"]
+}
