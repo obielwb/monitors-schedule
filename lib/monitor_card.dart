@@ -61,7 +61,7 @@ class MonitorCard extends StatelessWidget {
         ),
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const Details();
+            return Details(name: name);
           }));
         });
   }
