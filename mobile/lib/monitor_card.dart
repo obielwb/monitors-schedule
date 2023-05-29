@@ -35,10 +35,12 @@ class MonitorCard extends StatelessWidget {
   const MonitorCard(
       {super.key,
       required this.avatar,
+      required this.id,
       required this.name,
       required this.email});
 
   final Widget avatar;
+  final String id;
   final String name;
   final String email;
 
@@ -61,7 +63,7 @@ class MonitorCard extends StatelessWidget {
         ),
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return Details(name: name);
+            return Details(id: id);
           }));
         });
   }

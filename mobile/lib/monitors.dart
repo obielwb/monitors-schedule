@@ -15,6 +15,7 @@ class Monitors extends StatelessWidget {
             avatar: Container(
               decoration: const BoxDecoration(color: Colors.amber),
             ),
+            id: '1',
             name: 'João Pedro F. Barbosa',
             email: 'joao@gmail.com'),
         const Padding(padding: EdgeInsets.only(bottom: 10.0)),
@@ -22,6 +23,7 @@ class Monitors extends StatelessWidget {
             avatar: Container(
               decoration: const BoxDecoration(color: Colors.amber),
             ),
+            id: '2',
             name: 'João Pedro F. Barbosa',
             email: 'joao@gmail.com'),
       ],
