@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:monitors_schedule/monitor.dart';
 
-class Details extends StatelessWidget {
-  const Details({super.key, required this.id});
+class MonitorDetails extends StatelessWidget {
+  const MonitorDetails({super.key, required this.monitor});
 
-  final String id;
+  final Monitor monitor;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class Details extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text(id))),
+              child: Text("Voltar"))),
     );
   }
 }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:monitors_schedule/details.dart';
+import 'package:monitors_schedule/api.dart';
+import 'package:monitors_schedule/monitor_details.dart';
+import 'package:monitors_schedule/monitor.dart';
 
-class _MontitorDescription extends StatelessWidget {
-  const _MontitorDescription({required this.name, required this.email});
+class MonitorsDescription extends StatelessWidget {
+  final String baseUrl = "http://localhost:3030";
+
+  const MonitorsDescription({required this.name, required this.email});
 
   final String name;
   final String email;
@@ -32,17 +36,12 @@ class _MontitorDescription extends StatelessWidget {
 }
 
 class MonitorCard extends StatelessWidget {
-  const MonitorCard(
-      {super.key,
-      required this.avatar,
-      required this.id,
-      required this.name,
-      required this.email});
+  const MonitorCard({
+    super.key,
+    required this.monitor,
+  });
 
-  final Widget avatar;
-  final String id;
-  final String name;
-  final String email;
+  final Monitor monitor;
 
   @override
   Widget build(BuildContext context) {
@@ -52,18 +51,21 @@ class MonitorCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              AspectRatio(aspectRatio: 1.0, child: avatar),
+              AspectRatio(
+                  aspectRatio: 1.0,
+                  child: Image.network("$baseUrl${monitor.avatar}")),
               Expanded(
                 child: Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
-                    child: _MontitorDescription(email: email, name: name)),
+                    child: MonitorsDescription(
+                        email: monitor.email, name: monitor.name)),
               )
             ],
           ),
         ),
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return Details(id: id);
+            return MonitorDetails(monitor: monitor);
           }));
         });
   }
