@@ -4,8 +4,6 @@ import 'package:monitors_schedule/monitor_details.dart';
 import 'package:monitors_schedule/monitor.dart';
 
 class MonitorsDescription extends StatelessWidget {
-  final String baseUrl = "http://localhost:3030";
-
   const MonitorsDescription(
       {super.key, required this.id, required this.name, required this.email});
 
@@ -61,7 +59,7 @@ class MonitorCard extends StatelessWidget {
             children: <Widget>[
               AspectRatio(
                   aspectRatio: 1.0,
-                  child: Image.network("$baseUrl${monitor.avatar}")),
+                  child: Image.network("${Api.baseUrl}${monitor.avatar}")),
               Expanded(
                 child: Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
