@@ -232,7 +232,7 @@ export async function findAll(): Promise<Monitor[] | undefined> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(monitors)
-    }, 50 * Math.floor(Math.random() * 4))
+    }, 50 * Math.floor(Math.random() * 4)) // simulates a delay between 0 and 200ms
   })
 }
 
@@ -240,6 +240,6 @@ export async function findById(id: string): Promise<Monitor | undefined> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(monitors.find((monitor) => monitor.id === id))
-    }, 50 * Math.floor(Math.random() * 4))
+    }, 50 * Math.floor(Math.random() * 4)) // simulates a delay between 0 and 200ms
   })
 }
