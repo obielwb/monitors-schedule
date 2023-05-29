@@ -14,7 +14,7 @@ class MonitorDetails extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("Voltar"))),
+              child: const Text("Voltar"))),
     );
   }
 }

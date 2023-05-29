@@ -6,8 +6,10 @@ import 'package:monitors_schedule/monitor.dart';
 class MonitorsDescription extends StatelessWidget {
   final String baseUrl = "http://localhost:3030";
 
-  const MonitorsDescription({required this.name, required this.email});
+  const MonitorsDescription(
+      {super.key, required this.id, required this.name, required this.email});
 
+  final String id;
   final String name;
   final String email;
 
@@ -28,6 +30,12 @@ class MonitorsDescription extends StatelessWidget {
               Text(email,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
+                  style:
+                      const TextStyle(fontSize: 14.0, color: Colors.black54)),
+              const Padding(padding: EdgeInsets.only(top: 40.0)),
+              Text(id,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 12.0, color: Colors.black54))
             ]))
       ],
@@ -46,7 +54,7 @@ class MonitorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        child: Container(
+        child: SizedBox(
           height: 100.0,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +66,9 @@ class MonitorCard extends StatelessWidget {
                 child: Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
                     child: MonitorsDescription(
-                        email: monitor.email, name: monitor.name)),
+                        id: monitor.id,
+                        email: monitor.email,
+                        name: monitor.name)),
               )
             ],
           ),
