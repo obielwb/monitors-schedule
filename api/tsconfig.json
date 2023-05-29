@@ -8,8 +8,9 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@entities": ["src/entities"],
       "@controllers": ["src/controllers"],
+      "@entities": ["src/entities"],
+      "@repositories": ["src/repositories"],
       "@routes": ["src/routes"]
     }
   },

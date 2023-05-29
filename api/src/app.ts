@@ -14,8 +14,8 @@ app.use(
 )
 
 app.use(express.static('public'))
-app.use('/images', express.static('./public/images'))
+app.use('/public', express.static('./public'))
 
-app.use('/', routes)
+app.use('/api', routes)
 
 export { app }
