@@ -8,13 +8,13 @@ const monitors: Monitor[] = [
     email: 'cc22123@g.unicamp.br',
     avatar: '/public/images/monitors/bruno-borges.jpeg',
     schedule: {
-      tuesday: [
+      'Terça-feira': [
         {
           start: '10:45',
           end: '11:30'
         }
       ],
-      wednesday: [
+      'Quarta-feira': [
         {
           start: '08:15',
           end: '10:45'
@@ -24,7 +24,7 @@ const monitors: Monitor[] = [
           end: '18:15'
         }
       ],
-      thursday: [
+      'Quinta-feira': [
         {
           start: '10:45',
           end: '11:30'
@@ -34,7 +34,7 @@ const monitors: Monitor[] = [
           end: '15:00'
         }
       ],
-      saturday: [
+      Sábado: [
         {
           start: '10:00',
           end: '12:15'
@@ -48,13 +48,13 @@ const monitors: Monitor[] = [
     email: 'cc22303@g.unicamp.br',
     avatar: '/public/images/monitors/bruno-concli.jpeg',
     schedule: {
-      monday: [
+      'Segunda-feira': [
         {
           start: '16:00',
           end: '19:00'
         }
       ],
-      tuesday: [
+      'Terça-feira': [
         {
           start: '14:15',
           end: '15:00'
@@ -64,19 +64,19 @@ const monitors: Monitor[] = [
           end: '18:15'
         }
       ],
-      thursday: [
+      'Quinta-feira': [
         {
           start: '18:15',
           end: '19:45'
         }
       ],
-      friday: [
+      'Sexta-feira': [
         {
           start: '16:45',
           end: '18:15'
         }
       ],
-      saturday: [
+      Sábado: [
         {
           start: '07:30',
           end: '11:30'
@@ -90,7 +90,7 @@ const monitors: Monitor[] = [
     email: 'cc20676@g.unicamp.br',
     avatar: '/public/images/monitors/isabela.jpeg',
     schedule: {
-      monday: [
+      'Segunda-feira': [
         {
           start: '17:30',
           end: '19:00'
@@ -100,25 +100,25 @@ const monitors: Monitor[] = [
           end: '21:15'
         }
       ],
-      tuesday: [
+      'Terça-feira': [
         {
           start: '17:30',
           end: '23:00'
         }
       ],
-      wednesday: [
+      'Quarta-feira': [
         {
           start: '17:30',
           end: '19:00'
         }
       ],
-      thursday: [
+      'Quinta-feira': [
         {
           start: '17:30',
           end: '19:00'
         }
       ],
-      friday: [
+      'Sexta-feira': [
         {
           start: '17:30',
           end: '19:00'
@@ -132,13 +132,13 @@ const monitors: Monitor[] = [
     email: 'cc21687@g.unicamp.br',
     avatar: '/public/images/monitors/joao-pedro.jpeg',
     schedule: {
-      monday: [
+      'Segunda-feira': [
         {
           start: '08:15',
           end: '09:45'
         }
       ],
-      wednesday: [
+      'Quarta-feira': [
         {
           start: '10:00',
           end: '12:15'
@@ -148,13 +148,13 @@ const monitors: Monitor[] = [
           end: '15:00'
         }
       ],
-      thursday: [
+      'Quinta-feira': [
         {
           start: '10:00',
           end: '12:15'
         }
       ],
-      friday: [
+      'Sexta-feira': [
         {
           start: '11:30',
           end: '12:15'
@@ -180,7 +180,7 @@ const monitors: Monitor[] = [
     email: 'cc22327@g.unicamp.br',
     avatar: '/public/images/monitors/miguel.jpeg',
     schedule: {
-      monday: [
+      'Segunda-feira': [
         {
           start: '13:30',
           end: '14:15'
@@ -190,25 +190,25 @@ const monitors: Monitor[] = [
           end: '18:15'
         }
       ],
-      tuesday: [
+      'Terça-feira': [
         {
           start: '18:15',
           end: '19:00'
         }
       ],
-      wednesday: [
+      'Quarta-feira': [
         {
           start: '18:15',
           end: '19:00'
         }
       ],
-      thursday: [
+      'Quinta-feira': [
         {
           start: '13:30',
           end: '14:15'
         }
       ],
-      friday: [
+      'Sexta-feira': [
         {
           start: '13:30',
           end: '14:15'
@@ -218,7 +218,7 @@ const monitors: Monitor[] = [
           end: '18:15'
         }
       ],
-      saturday: [
+      Sábado: [
         {
           start: '07:30',
           end: '12:15'
