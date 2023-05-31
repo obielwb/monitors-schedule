@@ -1,8 +1,8 @@
 class Monitor {
-  String id = "";
-  String name = "";
-  String email = "";
-  String avatar = "";
+  String id = '';
+  String name = '';
+  String email = '';
+  String avatar = '';
   Object schedule = {};
 
   Monitor(this.id, this.name, this.email, this.avatar, this.schedule);
