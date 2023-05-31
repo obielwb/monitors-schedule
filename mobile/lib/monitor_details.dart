@@ -10,22 +10,8 @@ class MonitorDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //print();
-    //String monitorsSchedule = monitor.schedule.toString().replaceAll('"', "'");
-    String jsonString =
-        '{"monday": [{"start": "17:30", "end": "19:00"}, {"start": "20:30", "end": "21:15"}], "tuesday": [{"start": "17:30", "end": "23:00"}], "wednesday": [{"start": "17:30", "end": "19:00"}], "thursday": [{"start": "17:30", "end": "19:00"}], "friday": [{"start": "17:30", "end": "19:00"}]}';
-
-    Map<String, dynamic> schedule = jsonDecode(jsonString);
-
-    // Accessing and manipulating the parsed data
-    List<Map<String, dynamic>> monday =
-        List<Map<String, dynamic>>.from(schedule['monday']);
-    print('Monday:');
-    for (var timeSlot in monday) {
-      String start = timeSlot['start'];
-      String end = timeSlot['end'];
-      print('Start: $start, End: $end');
-    }
+    Map<dynamic, dynamic> data = monitor.toJson();
+    Map<dynamic, dynamic> schedule = data['schedule'];
 
     return Scaffold(
       body: Padding(
@@ -38,6 +24,25 @@ class MonitorDetails extends StatelessWidget {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8),
+            ListView.builder(
+                shrinkWrap: true,
+                itemCount: schedule.keys.length,
+                itemBuilder: (BuildContext context, index) {
+                  String day = schedule.keys.elementAt(index);
+                  List<dynamic> timeSlots = schedule[day];
+
+                  return ListTile(
+                    title: Text(day),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: timeSlots.map<Widget>((timeSlot) {
+                        String start = timeSlot['start'];
+                        String end = timeSlot['end'];
+                        return Text("Início: $start, Final: $end");
+                      }).toList(),
+                    ),
+                  );
+                }),
             TextButton(
                 onPressed: () {
                   Navigator.pop(context);
