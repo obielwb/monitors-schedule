@@ -43,11 +43,34 @@ class MonitorDetails extends StatelessWidget {
                     ),
                   );
                 }),
+            SizedBox(height: 16.0),
             TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text("Voltar"))
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("Voltar"),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                side: MaterialStateProperty.all<BorderSide>(
+                  BorderSide(
+                    color: Colors.blue,
+                    width: 2.0,
+                  ),
+                ),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                  EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                ),
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                textStyle: MaterialStateProperty.all<TextStyle>(
+                  TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal),
+                ),
+              ),
+            )
           ],
         ),
       ),
