@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:monitors_schedule/api.dart';
 import 'package:monitors_schedule/monitor.dart';
 import 'dart:convert';
 
@@ -15,15 +16,38 @@ class MonitorDetails extends StatelessWidget {
 
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Image.network(
+              "${Api.baseUrl}${monitor.avatar}",
+              width: 150,
+              height: 150,
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(height: 8),
             Text(
               monitor.name,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 6),
+            Text(
+              monitor.email,
+              style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black54),
+            ),
+            const SizedBox(height: 6),
+            const Text(
+              "Horários",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black54),
+            ),
+            const SizedBox(height: 4),
             ListView.builder(
                 shrinkWrap: true,
                 itemCount: schedule.keys.length,
@@ -38,21 +62,20 @@ class MonitorDetails extends StatelessWidget {
                       children: timeSlots.map<Widget>((timeSlot) {
                         String start = timeSlot['start'];
                         String end = timeSlot['end'];
-                        return Text("Início: $start, Final: $end");
+                        return Text("Das $start às $end");
                       }).toList(),
                     ),
                   );
                 }),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text("Voltar"),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
                 side: MaterialStateProperty.all<BorderSide>(
-                  BorderSide(
+                  const BorderSide(
                     color: Colors.blue,
                     width: 2.0,
                   ),
@@ -63,13 +86,15 @@ class MonitorDetails extends StatelessWidget {
                   ),
                 ),
                 padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 ),
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                 textStyle: MaterialStateProperty.all<TextStyle>(
-                  TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal),
+                  const TextStyle(
+                      fontSize: 14.0, fontWeight: FontWeight.normal),
                 ),
               ),
+              child: const Text("Voltar"),
             )
           ],
         ),
