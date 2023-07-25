@@ -1,6 +1,10 @@
 # monitors-schedule
+```
+Flutter application to show the schedules of the computer technician course monitors
+```
+<br/>
 
-Como executar o projeto: 
+How to execute: 
 ```
 git clone https://github.com/obielwb/monitors-schedule/
 cd monitors-schedule
